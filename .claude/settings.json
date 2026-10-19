@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -e \"import\\('./src/db/db.js'\\).then\\(async m=>{await import\\('./src/db/schema.js'\\); console.log\\('modules ok'\\); await m.pool.end\\(\\)}\\)\")",
+      "Bash(npx drizzle-kit *)"
+    ]
+  }
+}
