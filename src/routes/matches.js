@@ -41,6 +41,11 @@ matchRouter.post("/", async (req, res) => {
       awayScore: awayScore ?? 0
     }).returning();
 
+    // broadcast the new match to all connected WebSocket clients if the broadcast function is available
+    if(res.app.locals.broadcastMatchCreated) {
+      res.app.locals.broadcastMatchCreated(event);
+    }
+
     return res.status(201).json({data: event});
   }
   catch (error) {
