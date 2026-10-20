@@ -10,8 +10,7 @@ export const MATCH_STATUS = {
 const ISO_DATE_PATTERN =
   /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})?)?$/;
 
-const isValidIsoDate = (value) =>
-  ISO_DATE_PATTERN.test(value) && !Number.isNaN(Date.parse(value));
+const isValidIsoDate = (value) => z.iso.datetime();
 
 const nonNegativeInt = z.coerce.number().int().nonnegative();
 
