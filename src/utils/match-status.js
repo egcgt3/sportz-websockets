@@ -4,6 +4,10 @@ export function getMatchStatus(startTime, endTime, now = new Date()) {
     const start = new Date(startTime);
     const end = new Date(endTime);
 
+    if (startTime == null || endTime == null) {
+        return null;
+    }
+
     if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
         return null;
     }
